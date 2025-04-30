@@ -1,12 +1,16 @@
 @echo off
 echo Compiling Java files...
 
-cd src
-javac A\Program.java A\ProgramTest.java -d ../bin
+:: Create output directory if it doesn't exist
+mkdir ..\bin
 
-if %ERRORLEVEL% NEQ 0 (
+:: Compile Java files from src/A and output to bin
+javac -d ..\bin ..\src\A\Program.java ..\src\A\ProgramTest.java
+
+:: Check if compilation was successful
+IF %ERRORLEVEL% NEQ 0 (
     echo Compilation failed!
     exit /b 1
-) else (
+) ELSE (
     echo Compilation successful!
 )
