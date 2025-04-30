@@ -2,12 +2,11 @@
 echo Compiling Java files...
 
 :: Create output directory if it doesn't exist
-mkdir ..\bin
+mkdir ..\bin 2>nul
 
-:: Compile Java files from src/A and output to bin
-javac -d ..\bin ..\src\A\Program.java ..\src\A\ProgramTest.java
+:: Compile Java files, with classpath pointing to JUnit and Hamcrest JARs
+javac -cp ".;..\lib\junit-4.13.2.jar;..\lib\hamcrest-core-1.3.jar" -d ..\bin ..\src\A\Program.java ..\src\A\ProgramTest.java
 
-:: Check if compilation was successful
 IF %ERRORLEVEL% NEQ 0 (
     echo Compilation failed!
     exit /b 1
