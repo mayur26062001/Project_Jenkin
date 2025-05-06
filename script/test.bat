@@ -1,7 +1,7 @@
 @echo off
 echo Running JUnit tests...
 
-:: Set JAVA_HOME to JDK 17 if it's not already set globally
+:: Set JAVA_HOME to JDK 17 if it's not already set
 if "%JAVA_HOME%"=="" set JAVA_HOME=C:\Program Files\Zulu\zulu-17
 
 :: Run JUnit test
