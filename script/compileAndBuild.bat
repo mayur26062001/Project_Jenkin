@@ -1,11 +1,8 @@
 @echo off
 echo Compiling Java files...
 
-:: Check JAVA_HOME is set
-if "%JAVA_HOME%"=="" (
-    echo JAVA_HOME is not set. Exiting.
-    exit /b 1
-)
+:: Set JAVA_HOME to JDK 17 if it's not already set
+if "%JAVA_HOME%"=="" set JAVA_HOME=C:\Program Files\Zulu\zulu-17
 
 :: Create bin folder if not exists
 if not exist ..\bin mkdir ..\bin
